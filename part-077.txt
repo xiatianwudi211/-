@@ -1,0 +1,82 @@
+ef:e,children:t,fallback:n,resize:r,style:i,gl:a,events:o=_y,eventSource:s,eventPrefix:c,shadows:l,linear:u,flat:d,legacy:f,orthographic:p,frameloop:m,dpr:h,performance:g,raycaster:_,camera:y,scene:b,onPointerMissed:x,onCreated:S,...C}){v.useMemo(()=>xv(np),[]);let w=Qg(),[T,E]=yy({scroll:!0,debounce:{scroll:50,resize:0},...r}),D=v.useRef(null),O=v.useRef(null);v.useImperativeHandle(e,()=>D.current);let k=Jg(x),A=v.useCallback(e=>k.current==null?void 0:k.current(e),[k]),[j,M]=v.useState(!1),[N,ee]=v.useState(!1);if(j)throw j;if(N)throw N;let P=v.useRef(null),[te,ne]=Xg(),re=v.useRef(null),ie=()=>s?r_(s)?s.current:s:O.current;return v.useInsertionEffect(()=>()=>{let e=P.current;P.current=null,e?.unmount()},[]),qg(()=>{let e=D.current;E.width>0&&E.height>0&&e&&(P.current||=Kv(e),P.current.configure({gl:a,scene:b,events:o,shadows:l,linear:u,flat:d,legacy:f,orthographic:p,frameloop:m,dpr:h,performance:g,raycaster:_,camera:y,size:E,onPointerMissed:A,onCreated:e=>{re.current=e,e.events.connect==null||e.events.connect(ie()??O.current),c&&e.setEvents({compute:(e,t)=>{let n=e[c+`X`],r=e[c+`Y`];t.pointer.set(n/t.size.width*2-1,-(r/t.size.height)*2+1),t.raycaster.setFromCamera(t.pointer,t.camera)}}),S?.(e)}}).catch(ee),P.current.ready.status===`fulfilled`?P.current.render((0,$.jsx)(w,{children:(0,$.jsx)(e_,{set:ee,children:(0,$.jsx)(v.Suspense,{fallback:(0,$.jsx)($g,{set:M}),children:t??null})})})):P.current.ready.status===`pending`&&ne(P.current.ready))}),v.useEffect(()=>{let e=re.current?.get(),t=ie();e&&t&&e.events.connected!==t&&(e.events.connect==null||e.events.connect(t))}),v.useEffect(()=>{let e=D.current;return()=>{var t;e.isConnected||(t=P.current)==null||t.unmount()}},[]),(0,$.jsxs)(`div`,{ref:O,style:{position:`relative`,width:`100%`,height:`100%`,overflow:`hidden`,pointerEvents:s?`none`:`auto`,...i},...C,children:[(0,$.jsx)(`div`,{ref:T,style:{width:`100%`,height:`100%`},children:(0,$.jsx)(`canvas`,{ref:D,style:{display:`block`},children:n})}),te]})}function Ey(e){return(0,$.jsx)(Rg,{children:(0,$.jsx)(Ty,{...e})})}var Dy={height:6.4,baseRadius:2.45,scatterRadius:7.2,tiers:9,footY:.42},Oy={foliage:16e3,gifts:72,baubles:180,lights:340,stars:30,dust:700},ky={gift:.32,bauble:.62,light:1,star:.78},Ay={emeraldAbyss:`#03110d`,emeraldDeep:`#063a2c`,emerald:`#0d6b4c`,emeraldLit:`#25a878`,gold:`#e8b84b`,goldBright:`#ffdf8a`,champagne:`#fff0c2`,crimson:`#9c1f36`,sapphire:`#1b3f8f`,ivory:`#fff6dd`},jy=2.1,My=function(e){return e.SCATTERED=`SCATTERED`,e.TREE_SHAPE=`TREE_SHAPE`,e}({}),Ny=(0,v.createContext)(null);function Py(e,t){let n=Fn.clamp((e-t*.12)/.88,0,1);return n*n*(3-2*n)}function Fy({children:e}){let t=new URLSearchParams(window.location.search).get(`state`),n=t===`tree`?My.TREE_SHAPE:My.SCATTERED,[r,i]=(0,v.useState)(n),a=(0,v.useRef)(+(n===My.TREE_SHAPE));(0,v.useEffect)(()=>{if(t!==null)return;let e=window.setTimeout(()=>i(My.TREE_SHAPE),850);return()=>window.clearTimeout(e)},[t]);let o=(0,v.useCallback)(()=>{i(e=>e===My.SCATTERED?My.TREE_SHAPE:My.SCATTERED)},[]),s=(0,v.useMemo)(()=>({state:r,setState:i,toggle:o,progress:a}),[r,o]);return(0,$.jsx)(Ny.Provider,{value:s,children:e})}function Iy(){let e=(0,v.useContext)(Ny);if(!e)throw Error(`useMorph must be used inside <MorphProvider>`);return e}function Ly(){let{state:e,progress:t}=Iy();return q_((n,r)=>{let i=+(e===My.TREE_SHAPE);t.current=Fn.damp(t.current,i,jy,Math.min(r,.05))}),null}function Ry(){return Ry=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)({}).hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},Ry.apply(null,arguments)}function zy(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}new W,new W;function By(e,t){if(!(e instanceof t))throw TypeError(`Cannot call a class as a function`)}var Vy=function e(t,n,r){var i=this;By(this,e),zy(this,`dot2`,function(e,t){return i.x*e+i.y*t}),zy(this,`dot3`,function(e,t,n){return i.x*e+i.y*t+i.z*n}),this.x=t,this.y=n,this.z=r},Hy=[new Vy(1,1,0),new Vy(-1,1,0),new Vy(1,-1,0),new Vy(-1,-1,0),new Vy(1,0,1),new Vy(-1,0,1),new Vy(1,0,-1),new Vy(-1,0,-1),new Vy(0,1,1),new Vy(0,-1,1),new Vy(0,1,-1),new Vy(0,-1,-1)],Uy=[151,160,137,91,90,15,131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,190,6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,88,237,149,56,87,174,20,125,136,171,168,68,175,74,165,71,134,139,48,27,166,77,146,158,231,83,111,229,122,60,211,133,230,220,105,92,41,55,46,245,40,244,102,143,54,65,25,63,161,1,216,80,73,209,76,132,187,208,89,18,169,200,196,135,130,116,188,159,86,164,100,109,198,173,186,3,64,52,217,226,250,124,123,5,202,38,147,118,126,255,82,85,212,207,206,59,227,47,16,58,17,182,189,28,42,223,183,170,213,119,248,152,2,44,154,163,70,221,153,101,155,167,43,172,9,129,22,39,253,19,98,108,110,79,113,224,232,178,185,112,104,218,246,97,228,251,34,242,193,238,210,144,12,191,179,162,241,81,51,145,235,249,14,239,107,49,192,214,31,181,199,106,157,184,84,204,176,115,121,50,45,127,4,150,254,138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180],Wy=Array(512),Gy=Array(512);(function(e){e>0&&e<1&&(e*=65536),e=Math.floor(e),e<256&&(e|=e<<8);for(var t=0;t<256;t++){var n=t&1?Uy[t]^e&255:Uy[t]^e>>8&255;Wy[t]=Wy[t+256]=n,Gy[t]=Gy[t+256]=Hy[n%12]}})(0),.5*(Math.sqrt(3)-1),(3-Math.sqrt(3))/6;function Ky(e){if(typeof e==`number`)e=Math.abs(e);else if(typeof e==`string`){var t=e;e=0;for(var n=0;n<t.length;n++)e=(e+(n+1)*(t.charCodeAt(n)%96))%2147483647}return e===0&&(e=311),e}function qy(e){var t=Ky(e);return function(){var e=t*48271%2147483647;return t=e,e/2147483647}}new function e(t){var n=this;By(this,e),zy(this,`seed`,0),zy(this,`init`,function(e){n.seed=e,n.value=qy(e)}),zy(this,`value`,qy(this.seed)),this.init(t)}(Math.random());var Jy=parseInt(`187`.replace(/\D+/g,``)),Yy=Uint8Array,Xy=Uint16Array,Zy=Uint32Array,Qy=new Yy([0,0,0,0,0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,0,0,0,0]),$y=new Yy([0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,0,0]),eb=new Yy([16,17,18,0,8,7,9,6,10,5,11,4,12,3,13,2,14,1,15]),tb=function(e,t){for(var n=new Xy(31),r=0;r<31;++r)n[r]=t+=1<<e[r-1];for(var i=new Zy(n[30]),r=1;r<30;++r)for(var a=n[r];a<n[r+1];++a)i[a]=a-n[r]<<5|r;return[n,i]},nb=tb(Qy,2),rb=nb[0],ib=nb[1];rb[28]=258,ib[258]=28;var ab=tb($y,0),ob=ab[0];ab[1];for(var sb=new Xy(32768),cb=0;cb<32768;++cb){var lb=(cb&43690)>>>1|(cb&21845)<<1;lb=(lb&52428)>>>2|(lb&13107)<<2,lb=(lb&61680)>>>4|(lb&3855)<<4,sb[cb]=((lb&65280)>>>8|(lb&255)<<8)>>>1}for(var ub=(function(e,t,n){for(var r=e.length,i=0,a=new Xy(t);i<r;++i)++a[e[i]-1];var o=new Xy(t);for(i=0;i<t;++i)o[i]=o[i-1]+a[i-1]<<1;var s;if(n){s=new Xy(1<<t);var c=15-t;for(i=0;i<r;++i)if(e[i])for(var l=i<<4|e[i],u=t-e[i],d=o[e[i]-1]++<<u,f=d|(1<<u)-1;d<=f;++d)s[sb[d]>>>c]=l}else for(s=new Xy(r),i=0;i<r;++i)e[i]&&(s[i]=sb[o[e[i]-1]++]>>>15-e[i]);return s}),db=new Yy(288),cb=0;cb<144;++cb)db[cb]=8;for(var cb=144;cb<256;++cb)db[cb]=9;for(var cb=256;cb<280;++cb)db[cb]=7;for(var cb=280;cb<288;++cb)db[cb]=8;for(var fb=new Yy(32),cb=0;cb<32;++cb)fb[cb]=5;var pb=ub(db,9,1),mb=ub(fb,5,1),hb=function(e){for(var t=e[0],n=1;n<e.length;++n)e[n]>t&&(t=e[n]);return t},gb=function(e,t,n){var r=t/8|0;return(e[r]|e[r+1]<<8)>>(t&7)&n},_b=function(e,t){var n=t/8|0;return(e[n]|e[n+1]<<8|e[n+2]<<16)>>(t&7)},vb=function(e){return(e/8|0)+(e&7&&1)},yb=function(e,t,n){(t==null||t<0)&&(t=0),(n==null||n>e.length)&&(n=e.length);var r=new(e instanceof Xy?Xy:e instanceof Zy?Zy:Yy)(n-t);return r.set(e.subarray(t,n)),r},bb=function(e,t,n){var r=e.length;if(!r||n&&!n.l&&r<5)return t||new Yy(0);var i=!t||n,a=!n||n.i;n||={},t||=new Yy(r*3);var o=function(e){var n=t.length;if(e>n){var r=new Yy(Math.max(n*2,e));r.set(t),t=r}},s=n.f||0,c=n.p||0,l=n.b||0,u=n.l,d=n.d,f=n.m,p=n.n,m=r*8;do{if(!u){n.f=s=gb(e,c,1);var h=gb(e,c+1,3);if(c+=3,!h){var g=vb(c)+4,_=e[g-4]|e[g-3]<<8,v=g+_;if(v>r){if(a)throw`unexpected EOF`;break}i&&o(l+_),t.set(e.subarray(g,v),l),n.b=l+=_,n.p=c=v*8;continue}if(h==1)u=pb,d=mb,f=9,p=5;else if(h==2){var y=gb(e,c,31)+257,b=gb(e,c+10,15)+4,x=y+gb(e,c+5,31)+1;c+=14;for(var S=new Yy(x),C=new Yy(19),w=0;w<b;++w)C[eb[w]]=gb(e,c+w*3,7);c+=b*3;for(var T=hb(C),E=(1<<T)-1,D=ub(C,T,1),w=0;w<x;){var O=D[gb(e,c,E)];c+=O&15;var g=O>>>4;if(g<16)S[w++]=g;else{var k=0,A=0;for(g==16?(A=3+gb(e,c,3),c+=2,k=S[w-1]):g==17?(A=3+gb(e,c,7),c+=3):g==18&&(A=11+gb(e,c,127),c+=7);A--;)S[w++]=k}}var j=S.subarray(0,y),M=S.subarray(y);f=hb(j),p=hb(M),u=ub(j,f,1),d=ub(M,p,1)}else throw`invalid block type`;if(c>m){if(a)throw`unexpected EOF`;break}}i&&o(l+131072);for(var N=(1<<f)-1,ee=(1<<p)-1,P=c;;P=c){var k=u[_b(e,c)&N],te=k>>>4;if(c+=k&15,c>m){if(a)throw`unexpected EOF`;break}if(!k)throw`invalid length/literal`;if(te<256)t[l++]=te;else if(te==256){P=c,u=null;break}else{var ne=te-254;if(te>264){var w=te-257,re=Qy[w];ne=gb(e,c,(1<<re)-1)+rb[w],c+=re}var ie=d[_b(e,c)&ee],ae=ie>>>4;if(!ie)throw`invalid distance`;c+=ie&15;var M=ob[ae];if(ae>3){var re=$y[ae];M+=_b(e,c)&(1<<re)-1,c+=re}if(c>m){if(a)throw`unexpected EOF`;break}i&&o(l+131072);for(var oe=l+ne;l<oe;l+=4)t[l]=t[l-M],t[l+1]=t[l+1-M],t[l+2]=t[l+2-M],t[l+3]=t[l+3-M];l=oe}}n.l=u,n.p=P,n.b=l,u&&(s=1,n.m=f,n.d=d,n.n=p)}while(!s);return l==t.length?t:yb(t,0,l)},xb=new Yy(0),Sb=function(e){if((e[0]&15)!=8||e[0]>>>4>7||(e[0]<<8|e[1])%31)throw`invalid zlib data`;if(e[1]&32)throw`invalid zlib data: preset dictionaries not supported`};function Cb(e,t){return bb((Sb(e),e.subarray(2,-4)),t)}var wb=typeof TextDecoder<`u`&&new TextDecoder;try{wb.decode(xb,{stream:!0})}catch{}var Tb=e=>e&&e.isCubeTexture,Eb=class extends Y{constructor(e,t){let n=Tb(e),r=((n?e.image[0]?.width:e.image.width)??1024)/4,i=Math.floor(Math.log2(r)),a=2**i,o=3*Math.max(a,112),s=4*a,c=[n?`#define ENVMAP_TYPE_CUBE`:``,`#define CUBEUV_TEXEL_WIDTH ${1/o}`,`#define CUBEUV_TEXEL_HEIGHT ${1/s}`,`#define CUBEUV_MAX_MIP ${i}.0`].join(`
+`)+`
+        #define ENVMAP_TYPE_CUBE_UV
+        varying vec3 vWorldPosition;
+        uniform float radius;
+        uniform float height;
+        uniform float angle;
+        #ifdef ENVMAP_TYPE_CUBE
+            uniform samplerCube map;
+        #else
+            uniform sampler2D map;
+        #endif
+        // From: https://www.shadertoy.com/view/4tsBD7
+        float diskIntersectWithBackFaceCulling( vec3 ro, vec3 rd, vec3 c, vec3 n, float r ) 
+        {
+            float d = dot ( rd, n );
+            
+            if( d > 0.0 ) { return 1e6; }
+            
+            vec3  o = ro - c;
+            float t = - dot( n, o ) / d;
+            vec3  q = o + rd * t;
+            
+            return ( dot( q, q ) < r * r ) ? t : 1e6;
+        }
+        // From: https://www.iquilezles.org/www/articles/intersectors/intersectors.htm
+        float sphereIntersect( vec3 ro, vec3 rd, vec3 ce, float ra ) 
+        {
+            vec3 oc = ro - ce;
+            float b = dot( oc, rd );
+            float c = dot( oc, oc ) - ra * ra;
+            float h = b * b - c;
+            
+            if( h < 0.0 ) { return -1.0; }
+            
+            h = sqrt( h );
+            
+            return - b + h;
+        }
+        vec3 project() 
+        {
+            vec3 p = normalize( vWorldPosition );
+            vec3 camPos = cameraPosition;
+            camPos.y -= height;
+            float intersection = sphereIntersect( camPos, p, vec3( 0.0 ), radius );
+            if( intersection > 0.0 ) {
+                
+                vec3 h = vec3( 0.0, - height, 0.0 );
+                float intersection2 = diskIntersectWithBackFaceCulling( camPos, p, h, vec3( 0.0, 1.0, 0.0 ), radius );
+                p = ( camPos + min( intersection, intersection2 ) * p ) / radius;
+            } else {
+                p = vec3( 0.0, 1.0, 0.0 );
+            }
+            return p;
+        }
+        #include <common>
+        #include <cube_uv_reflection_fragment>
+        void main() 
+        {
+            vec3 projectedWorldPosition = project();
+            
+            #ifdef ENVMAP_TYPE_CUBE
+                vec3 outcolor = textureCube( map, projectedWorldPosition ).rgb;
+            #else
+                vec3 direction = normalize( projectedWorldPosition );
+                vec2 uv = equirectUv( direction );
+                vec3 outcolor = texture2D( map, uv ).rgb;
+            #endif
+            gl_FragColor = vec4( outcolor, 1.0 );
+            #include <tonemapping_fragment>
+            #include <${Jy>=154?`colorspace_fragment`:`encodings_fragment`}>
+        }
+        `,l={map:{value:e},height:{value:t?.height||15},radius:{value:t?.radius||100}},u=new Yc(1,16),d=new yl({uniforms:l,fragmentShader:c,vertexShader:`
+        varying vec3 vWorldPosition;
+        void main() 
+        {
+            vec4 worldPosition = ( modelMatrix * vec4( position, 1.0 ) );
+            vWorldPosition = worldPosition.xyz;
+            
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+        `,side:2});super(u,d)}set radius(e){this.material.uniforms.radius.value=e}get radius(){return this.material.uniforms.radius.value}set height(e){this.material.uniforms.height.value=e}get height(){return this.material.uniforms.height.value}},Db=Object.defineProperty,Ob=(e,t,n)=>t in e?Db(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,kb=(e,t,n)=>(Ob(e,typeof t==`symbol`?t:t+``,n),n),Ab=class{constructor(){kb(this,`_listeners`)}addEventListener(e,t){this._listeners===void 0&&(this._listeners={});let n=this._listeners;n[e]===void 0&&(n[e]=[]),n[e].indexOf(t)===-1&&n[e].push(t)}hasEventListener(e,t){if(this._listeners===void 0)return!1;let n=this._listeners;return n[e]!==void 0&&n[e].indexOf(t)!==-1}removeEventListener(e,t){if(this._listeners===void 0)return;let n=this._listeners[e];if(n!==void 0){let e=n.indexOf(t);e!==-1&&n.splice(e,1)}}dispatchEvent(e){if(this._listeners===void 0)return;let t=this._listeners[e.type];if(t!==void 0){e.target=this;let n=t.slice(0);for(let t=0,r=n.length;t<r;t++)n[t].call(this,e);e.target=null}}},jb=Object.defineProperty,Mb=(e,t,n)=>t in e?jb(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,Nb=(e,t,n)=>(Mb(e,typeof t==`symbol`?t:t+``,n),n),Pb=new Aa,Fb=new ia,Ib=Math.cos(Math.PI/180*70),Lb=(e,t)=>(e%t+t)%t,Rb=class extends Ab{constructor(e,t){super(),Nb(this,`object`),Nb(this,`domElement`),Nb(this,`enabled`,!0),Nb(this,`target`,new G),Nb(this,`minDistance`,0),Nb(this,`maxDistance`,1/0),Nb(this,`minZoom`,0),Nb(this,`maxZoom`,1/0),Nb(this,`minPolarAngle`,0),Nb(this,`maxPolarAngle`,Math.PI),Nb(this,`minAzimuthAngle`,-1/0),Nb(this,`maxAzimuthAngle`,1/0),Nb(this,`enableDamping`,!1),Nb(this,`dampingFactor`,.05),Nb(this,`enableZoom`,!0),Nb(this,`zoomSpeed`,1),Nb(this,`enableRotate`,!0),Nb(this,`rotateSpeed`,1),Nb(this,`enablePan`,!0),Nb(this,`panSpeed`,1),Nb(this,`screenSpacePanning`,!0),Nb(this,`keyPanSpeed`,7),Nb(this,`zoomToCursor`,!1),Nb(this,`autoRotate`,!1),Nb(this,`autoRotateSpeed`,2),Nb(this,`reverseOrbit`,!1),Nb(this,`reverseHorizontalOrbit`,!1),Nb(this,`reverseVertica
